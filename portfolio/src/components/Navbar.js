@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -34,7 +33,7 @@ export default function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor:'#5800FF',height:"100%" }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor:'#5800FF',height:"100%"}}>
       <Typography variant="h6" sx={{ my: 2, color: '#fff' }}>
         Almada dev
       </Typography>
@@ -42,7 +41,7 @@ export default function DrawerAppBar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <PrevLink to={`/${item}`}> 
+            <PrevLink to={item !== "Home" ? `/${item}` : "/"}> 
                 <ListItemButton sx={{ textAlign: 'center' }}>
                   <ListItemText primary={item} />
                 </ListItemButton>
@@ -79,7 +78,7 @@ export default function DrawerAppBar(props) {
             {navItems.map((item) => (
                 
               <Button key={item} sx={{ color: '#fff' }}>
-                <PrevLink to={`/${item}`}>
+                <PrevLink to={item !== "Home" ? `/${item}` : "/"}>
                     {item}
                 </PrevLink>
               </Button>

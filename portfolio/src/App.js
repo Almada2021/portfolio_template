@@ -1,6 +1,7 @@
 import './App.css';
-import {BrowserRouter} from "react-router-dom";
-import DrawerAppBar from './components/Navbar';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { Home } from './pages/Home';
+import DrawerAppBar from './components/Navbar'
 
 function App() {
 
@@ -8,6 +9,11 @@ function App() {
     <div className="App" >
       <BrowserRouter>
         <DrawerAppBar/>
+        <Routes>
+          <Route  path="/" index element={<Home/>}>
+
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );
