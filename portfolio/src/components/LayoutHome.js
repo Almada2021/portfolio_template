@@ -1,5 +1,4 @@
 import React from 'react'
-import BoxFrame from './LayoutHome/BoxFrame'
 import  {motion} from "framer-motion";
 import {styled} from '@mui/material';
 

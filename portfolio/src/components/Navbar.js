@@ -22,6 +22,15 @@ const PrevLink = styled(Link)(({theme}) => ({
         transition: "1s",
     },
 }));
+const PrevLinkMobile = styled(Link)(({theme}) => ({
+  textDecoration:"none",
+  width: "100%",
+  color: theme.palette.text.main,
+  "&:hover":{
+      color : theme.palette.text.main,
+      transition: "1s",
+  },
+}));
 const drawerWidth = 240;
 const navItems = ['Home', 'Proyects', 'Contact'];
 
@@ -41,11 +50,11 @@ export default function DrawerAppBar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <PrevLink to={item !== "Home" ? `/${item}` : "/"}> 
+            <PrevLinkMobile to={item !== "Home" ? `/${item}` : "/"}> 
                 <ListItemButton sx={{ textAlign: 'center' }}>
                   <ListItemText primary={item} />
                 </ListItemButton>
-            </PrevLink>
+            </PrevLinkMobile>
           </ListItem>
         ))}
       </List>
