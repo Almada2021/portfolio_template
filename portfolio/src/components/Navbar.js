@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import {styled} from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 const PrevLink = styled(Link)(({theme}) => ({
     textDecoration:"none",
     color: theme.palette.text.main,
@@ -43,8 +44,9 @@ export default function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', backgroundColor:'#5800FF',height:"100%"}}>
-      <Typography variant="h6" sx={{ my: 2, color: '#fff' }}>
-        Almada dev
+      <Typography variant="h6" sx={{ my: 2, color: '#fff', cursor:"pointer" }} onClick={()=> navigate("/")}
+>
+            Almada dev
       </Typography>
       <Divider />
       <List>
@@ -62,7 +64,7 @@ export default function DrawerAppBar(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-
+  const navigate = useNavigate()
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar component="nav">
@@ -79,7 +81,8 @@ export default function DrawerAppBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', cursor:"pointer"  } }}
+            onClick={()=> navigate("/")}
           >
             Almada dev
           </Typography>

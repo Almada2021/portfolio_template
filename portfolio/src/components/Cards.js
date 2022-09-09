@@ -19,9 +19,9 @@ const Cards = () => {
   return (
     <div style={{width:"100%",marginBottom: "50px"}}>
         <Container>
-            <CristalCard title="Download my cv" imageComponent={<PictureAsPdfIcon sx={{width:"80%", height: "100%", color: "#fff"}}/>} description="download my resume in google drive"/>
-            <CristalCard title="Linkedin Profile" imageComponent={<LinkedInIcon sx={{width:"80%", height: "100%", color: "#fff"}}/>} description="check out my Linkedin profile"/>
-            <CristalCard title="Github Profile" imageComponent={<GitHubIcon sx={{width:"80%", height: "100%" , color: "#fff"}}/>} description="check out my github profile"/>
+            <CristalCard title="Download my cv" imageComponent={<PictureAsPdfIcon sx={{width:"80%", height: "100%", color: "#fff"}}/>} description="download my resume in google drive" link="https://google.com"/>
+            <CristalCard title="Linkedin Profile" imageComponent={<LinkedInIcon sx={{width:"80%", height: "100%", color: "#fff"}}/>} description="check out my Linkedin profile" link="https://www.linkedin.com/in/tobias-almada-62954b20b/"/>
+            <CristalCard title="Github Profile" imageComponent={<GitHubIcon sx={{width:"80%", height: "100%" , color: "#fff"}}/>} description="check out my github profile" link="https://github.com/Almada2021"/>
         </Container>  
     </div>
     

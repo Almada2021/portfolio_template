@@ -3,5 +3,6 @@ body{
   background-color: #5800FF;
   font-family:'Roboto', sans-serif;
 }
-
-
+.item:last-of-type{
+  margin: 0 !important;
+}

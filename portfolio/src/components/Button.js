@@ -23,9 +23,9 @@ const ButtonComponent = styled("button")(({theme}) =>({
     }
 }));
 
-const Button = ({text}) => {
+const Button = ({text, link}) => {
   return (
-        <LinkRef href='http://google.com'>
+        <LinkRef href={link}>
             <ButtonComponent >
                 {text}
             </ButtonComponent>

@@ -3,7 +3,7 @@ import { styled } from '@mui/material';
 import { motion } from 'framer-motion';
 import Button from './Button';
 const CardContainer = styled(motion.div)(({theme}) => ({
-    
+    alignItems: "center",    
     backgroundColor: "rgba(255, 255, 255, .15)",  
     backdropFilter: "blur(5px)",
     backgroundBlendMode: "lighten",
@@ -20,8 +20,8 @@ const CardContainer = styled(motion.div)(({theme}) => ({
     [theme.breakpoints.up("md")]:{
       width: "28%",
       height: "260px"
-    }
-
+    },
+   
 }));
 
 const Title = styled("p")(({theme}) => ({ 
@@ -45,12 +45,16 @@ const TextContainer = styled("div")(({theme}) => ({
   color: theme.palette.text.main,
   fontSize: "14px",
   fontWeight: "200",
-  width: "95%",
+  width: "90%",
   overflow: "hidden",
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
-    fontSize:"16px"
-  }
+    fontSize:"16px",
+    height:"38px",
+  },
+  [theme.breakpoints.up("lg")]:{
+    height:"20px",      
+  },
 }));
 
 const BtnContainer = styled("div")(({theme}) =>({
@@ -60,8 +64,7 @@ const BtnContainer = styled("div")(({theme}) =>({
   alignItems:"center",
   justifyContent: "center",
 }))
-const CristalCard = ({imageComponent, title, description}) => {
-  
+const CristalCard = ({imageComponent, title, description, link}) => {
   return (
     <CardContainer
       initial={{
@@ -82,8 +85,8 @@ const CristalCard = ({imageComponent, title, description}) => {
       <TextContainer>
         {description}
       </TextContainer>
-      <BtnContainer>
-        <Button text="Go to"></Button>
+      <BtnContainer >
+        <Button text="Go to" link={link}></Button>
       </BtnContainer>
     </CardContainer>
   )
