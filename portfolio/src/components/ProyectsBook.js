@@ -1,13 +1,19 @@
 import React, {useRef} from 'react'
 import { styled } from '@mui/material'
 import {motion, useScroll} from "framer-motion"
+import ProyectCard from './ProyectCard/ProyectCard';
+import { listProyect } from '../ListProyects/listProyects';
 const Container = styled("div")(({theme}) => ({
     backgroundColor: theme.palette.primary.main,
     borderRadius: "5px",
     display:"flex",
-    height: "80vh",
+    minHeight: "400px",
+    maxHeight: "800px",
     width: "75vw",
-    flexWrap: "wrap",
+    flexWrap: "wrap",  
+    // [theme.breakpoints.down("md")]: {
+    //     height: "100vh"
+    // }  
 }));
 const CircleBackground = styled("circle")(({theme}) => ({
     stroke: "#fff",
@@ -47,7 +53,6 @@ export default function ProyectsBook() {
             </div>
            
           <ul
-            onScroll={() => { console.log(scrollXProgress)}}
             ref={ref}
             style={{
                 display: "flex",
@@ -58,21 +63,21 @@ export default function ProyectsBook() {
                 padding: "20px 0",
                 flex: "0 0 80%",
                 margin: "0 auto",
+            
             }}
           >
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
-            <li className='item' style={{background:"#fff", flex: "0 0 200px", margin :"0 20px 0 0"}}></li>
+            {
+                listProyect.map( ({title, description, img, deploy, github}) => (
+                    <ProyectCard
+                        title={title}
+                        description={description}
+                        image={img}
+                        deploy={deploy}
+                        github={github}
+                    />
+                ))
+            }
           </ul>
-          {/* <ListPages/> */}
         </Container>
     )
 }

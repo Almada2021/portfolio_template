@@ -5,6 +5,7 @@ import DrawerAppBar from './components/Navbar'
 import Proyects from './pages/Proyects';
 import Footer from './components/Footer';
 import "./App.css";
+import Contact from './pages/Contact';
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route  path="/" index element={<Home/>}/>
           <Route  path="/proyects"  element={<Proyects/>}/>
+          <Route  path="/contact"  element={<Contact/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

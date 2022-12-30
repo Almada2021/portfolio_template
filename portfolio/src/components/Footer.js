@@ -10,7 +10,8 @@ const ContainerFooter = styled("div")(({theme})=>({
     display:"flex",
     height: "200px",
     position:"sticky",
-    
+    color:theme.palette.text.main,
+
     gap:"2px",
 }));
 const ListContainer = styled("ul")(({theme}) =>({
@@ -45,13 +46,13 @@ const Footer = () => {
             <ListItem to="/">Home</ListItem>
             <ListItem to="/Proyects">Proyect</ListItem>
             <ListItem to="/Contact">Contact</ListItem>
-            <p>Lorem Ipsum Lorem </p>
+            <p style={{fontWeight: 700}}>Tobias Almada </p>
         </ListContainer>
         <ListContainer>
             <h3>Social Networks</h3>
-            <ExternalLink href=''><LinkedInIcon/>Linkedin</ExternalLink>
-            <ExternalLink href=''><GitHubIcon/>Github</ExternalLink>
-            <ExternalLink href=''><PictureAsPdfIcon/>CV</ExternalLink>
+            <ExternalLink href='https://google.com'><LinkedInIcon/>Linkedin</ExternalLink>
+            <ExternalLink href='https://www.linkedin.com/in/tobias-almada-62954b20b/'><GitHubIcon/>Github</ExternalLink>
+            <ExternalLink href='https://github.com/Almada2021'><PictureAsPdfIcon/>CV</ExternalLink>
         </ListContainer>
     </ContainerFooter>
   )
