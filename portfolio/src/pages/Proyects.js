@@ -6,7 +6,9 @@ const ProyectPage = styled("div")(({theme}) => ({
   display: "flex",
   justifyContent: "center",
   marginTop:"68px",
-  height: "100vh"
+  minheight: "100vh",
+  margin: "20vh 0",
+
 }));
 const Proyects = () => {
   return (

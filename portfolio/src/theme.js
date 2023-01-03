@@ -10,7 +10,7 @@ export const theme = createTheme({
         },
         text:{
             main:"#fff",
-            secondary:"#5800FF"
+            secondary:"#5800FF",
         }
         ,
         otherColor:{
