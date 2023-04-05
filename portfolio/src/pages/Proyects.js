@@ -1,4 +1,3 @@
-import React from 'react'
 import { styled } from '@mui/material';
 import ProyectsBook from '../components/ProyectsBook';
 const ProyectPage = styled("div")(({theme}) => ({

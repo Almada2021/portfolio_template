@@ -23,9 +23,13 @@ const ButtonComponent = styled("button")(({theme}) =>({
     }
 }));
 
-const Button = ({text, link}) => {
+const Button = ({text, link, click}) => {
+    const handleClick = () => {
+        console.log("clicked", click)
+        click()
+    }
   return (
-        <LinkRef href={link}>
+        <LinkRef href={link ? link : null} onClick={handleClick}>
             <ButtonComponent >
                 {text}
             </ButtonComponent>

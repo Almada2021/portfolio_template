@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Button from "../Button"
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { ModalContext } from '../../contexts/modalcontext';
 const CardContainer = styled(Card)(({theme}) => ({
   background:"#fff",
   minHeight: "200px",
@@ -35,6 +36,7 @@ const CardTitle = styled(Typography)( ({theme}) => ({
 }));
 const CardMotion = motion(CardContainer);
 export default function ProyectCard({title = "", description = "", image="", deploy="/", github="/"}) {
+  const {changeModal} = React.useContext(ModalContext)
   return (
     <CardMotion
       initial={{
@@ -70,7 +72,7 @@ export default function ProyectCard({title = "", description = "", image="", dep
           </Typography>
       </Box>
       <Stack direction="row" height="max-content" justifyContent="center" padding="15px" gap="5px">
-        <Button  text="view More"></Button>
+        <Button click={changeModal} text="view"></Button>
         <Button text="Go" link={deploy}>Go</Button>
         <Button text={<GitHubIcon/>} link={github}>
         </Button>

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import {useRef} from 'react'
 import { styled } from '@mui/material'
 import {motion, useScroll} from "framer-motion"
 import ProyectCard from './ProyectCard/ProyectCard';
@@ -10,10 +10,7 @@ const Container = styled("div")(({theme}) => ({
     minHeight: "400px",
     maxHeight: "800px",
     width: "75vw",
-    flexWrap: "wrap",  
-    // [theme.breakpoints.down("md")]: {
-    //     height: "100vh"
-    // }  
+    flexWrap: "wrap",    
 }));
 const CircleBackground = styled("circle")(({theme}) => ({
     stroke: "#fff",
