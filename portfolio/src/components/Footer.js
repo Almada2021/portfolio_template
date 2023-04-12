@@ -52,9 +52,9 @@ const Footer = () => {
         </ListContainer>
         <ListContainer>
             <h3>Social Networks</h3>
-            <ExternalLink href='https://google.com'><LinkedInIcon/>Linkedin</ExternalLink>
-            <ExternalLink href='https://www.linkedin.com/in/tobias-almada-62954b20b/'><GitHubIcon/>Github</ExternalLink>
-            <ExternalLink href='https://github.com/Almada2021'><PictureAsPdfIcon/>CV</ExternalLink>
+            <ExternalLink href={process.env.REACT_APP_LINKEDIN}><LinkedInIcon/>Linkedin</ExternalLink>
+            <ExternalLink href={process.env.REACT_APP_GITHUB}><GitHubIcon/>Github</ExternalLink>
+            <ExternalLink href={process.env.REACT_APP_CV}><PictureAsPdfIcon/>CV</ExternalLink>
         </ListContainer>
     </ContainerFooter>
   )

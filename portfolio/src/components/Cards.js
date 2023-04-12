@@ -18,6 +18,7 @@ const Container = styled("div")(({ theme }) => ({
   },
 }));
 const Cards = () => {
+  
   return (
     <div style={{ width: "1fr", marginBottom: "50px" }}>
       <Container>
@@ -29,7 +30,7 @@ const Cards = () => {
             />
           }
           description="download my resume in google drive"
-          link={process.env.CV}
+          link={process.env.REACT_APP_CV}
         />
         <CristalCard
           title="Linkedin Profile"
@@ -39,7 +40,7 @@ const Cards = () => {
             />
           }
           description="check out my Linkedin profile"
-          link="https://www.linkedin.com/in/tobias-almada-62954b20b/"
+          link={process.env.REACT_APP_LINKEDIN}
         />
         <CristalCard
           title="Github Profile"
@@ -47,7 +48,7 @@ const Cards = () => {
             <GitHubIcon sx={{ width: "80%", height: "100%", color: "#fff" }} />
           }
           description="check out my github profile"
-          link="https://github.com/Almada2021"
+          link={process.env.REACT_APP_GITHUB}
         />
       </Container>
     </div>
