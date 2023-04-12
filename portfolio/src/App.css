@@ -1,15 +1,19 @@
-
+.App {
+    height: max-content;
+}
 ::-webkit-scrollbar {
     height: 5px;
     color: #fff;
-    width: 5px;
+    width: 10px;
     background: #fff3 ;
     -webkit-border-radius: 1ex;
+    border-radius: 1ex;
 }
   
 ::-webkit-scrollbar-thumb {
-    background: #fff;
+    background: #eee;
     -webkit-border-radius: 1ex;
+    border-radius: 1ex;
 }
   
 ::-webkit-scrollbar-corner {

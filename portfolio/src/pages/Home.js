@@ -6,6 +6,7 @@ const PageContainer = styled("div")({
   display:"flex",
   flexDirection : "column",
   justifyContent:"center",
+  // minHeight: "max-content"
 })
 export const Home = () => {
   return (

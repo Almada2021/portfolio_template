@@ -9,13 +9,14 @@ const LinkRef = styled("a")(({theme})=>({
         color: "inherit",
     }
 }))
-const ButtonComponent = styled("button")(({theme}) =>({
-    border:"none",
+const ButtonComponent = styled("button")(({theme, disabled}) =>({
     borderRadius: "4%",
-    backgroundColor:theme.palette.primary.main,
-    color: theme.palette.text.main,
+    backgroundColor: disabled ?  "#eee" : theme.palette.primary.main ,
+    color: !disabled ? theme.palette.text.main : "#000",
     height: "100%",
     padding : "0",
+    cursor: !disabled ? "pointer" : "default",
+    border: !disabled ? "none" : "1px solid #000",
     margin:"0",
     width:"100%",
     "&:focus":{
@@ -23,14 +24,19 @@ const ButtonComponent = styled("button")(({theme}) =>({
     }
 }));
 
-const Button = ({text, link, click}) => {
-    const handleClick = () => {
-        console.log("clicked", click)
+const Button = ({text, link, click, disabled}) => {
+    const handleClick = (e) => {
+        if(disabled && !link){
+            return null
+        }
+        if(!link){
+            e.preventDefault();
+        }
         click()
     }
   return (
-        <LinkRef href={link ? link : null} onClick={handleClick}>
-            <ButtonComponent >
+        <LinkRef  href={link ? link : null} onClick={handleClick}>
+            <ButtonComponent disabled={disabled}>
                 {text}
             </ButtonComponent>
         </LinkRef>

@@ -36,7 +36,18 @@ const CardTitle = styled(Typography)( ({theme}) => ({
 }));
 const CardMotion = motion(CardContainer);
 export default function ProyectCard({title = "", description = "", image="", deploy="/", github="/"}) {
-  const {changeModal} = React.useContext(ModalContext)
+  const {changeModal, changeContent} = React.useContext(ModalContext)
+  const content = {
+    title,
+    description,
+    image,
+    deploy,
+    github,
+  }
+  const openModal = () => {
+    changeModal();
+    changeContent(content);
+  }
   return (
     <CardMotion
       initial={{
@@ -72,7 +83,7 @@ export default function ProyectCard({title = "", description = "", image="", dep
           </Typography>
       </Box>
       <Stack direction="row" height="max-content" justifyContent="center" padding="15px" gap="5px">
-        <Button click={changeModal} text="view"></Button>
+        <Button click={openModal} text="view"></Button>
         <Button text="Go" link={deploy}>Go</Button>
         <Button text={<GitHubIcon/>} link={github}>
         </Button>

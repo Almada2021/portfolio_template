@@ -68,6 +68,7 @@ export default function ProyectsBook() {
                     <ProyectCard
                         title={title}
                         description={description}
+                        key={title + deploy}
                         image={img}
                         deploy={deploy}
                         github={github}

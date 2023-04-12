@@ -11,11 +11,11 @@ const CardContainer = styled(motion.div)(({theme}) => ({
     display : "flex",
     flexDirection: "column",
     filter : "brightness(110%)",
-    width: "80%",
+    // width: "80%",
     height:"230px",
-    margin: "2%",
+    margin: "5px",
     [theme.breakpoints.up("sm")]:{
-      width: "50%",
+      // width: "40%",
     },
     [theme.breakpoints.up("md")]:{
       width: "28%",
@@ -38,7 +38,7 @@ const LogoContainer = styled("div")(({theme}) => ({
   justifyContent: "center",
   width: "100%",
   marginTop: "10px",
-  height: "30%"
+  height: "25%"
 }));
 
 const TextContainer = styled("div")(({theme}) => ({
@@ -86,7 +86,7 @@ const CristalCard = ({imageComponent, title, description, link}) => {
         {description}
       </TextContainer>
       <BtnContainer >
-        <Button text="Go to" link={link}></Button>
+        <Button text="View" link={link}></Button>
       </BtnContainer>
     </CardContainer>
   )

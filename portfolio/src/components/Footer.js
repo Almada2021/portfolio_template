@@ -11,8 +11,10 @@ const ContainerFooter = styled("div")(({theme})=>({
     height: "200px",
     position:"sticky",
     color:theme.palette.text.main,
-
     gap:"2px",
+    [theme.breakpoints.down("md")]: {
+        display: "none"
+    }
 }));
 const ListContainer = styled("ul")(({theme}) =>({
     alignItems:"start",

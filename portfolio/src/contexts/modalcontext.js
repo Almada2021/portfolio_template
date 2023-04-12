@@ -11,9 +11,12 @@ export function ModalProvider ({children}) {
     const changeModal = () => {
         setModal((state) => ({...state, open: !state.open}))
     }
+    const changeContent = (values) => {
+        setModal((state) => ({...state, content: values}))
+    }
     return(
         <>
-            <ModalContext.Provider value={{modal, setModal, changeModal}}>
+            <ModalContext.Provider value={{modal, setModal, changeModal, changeContent}}>
                 {children}
             </ModalContext.Provider>
         </>

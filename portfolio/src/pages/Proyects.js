@@ -6,8 +6,11 @@ const ProyectPage = styled("div")(({theme}) => ({
   justifyContent: "center",
   marginTop:"68px",
   minheight: "100vh",
-  margin: "20vh 0",
+  margin: "10vh 0",
+  [theme.breakpoints.up("md")]: {
+    margin: "20vh 0",
 
+  }
 }));
 const Proyects = () => {
   return (
