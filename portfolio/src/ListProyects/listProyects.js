@@ -32,14 +32,14 @@ export const listProyect = [
         title: "TwitterClone",
         description: textTwitterClone,
         img: twitterClone,
-        deploy: "https://stunning-kitten-bc730d.netlify.app/#dark",
+        deploy: "https://texterclone.vercel.app/",
         github: "https://github.com/Almada2021/MUI-Project"
     },
     {
         title: "Cart of Ecommerce",
         description: textEcommerce,
         img: ecommerce,
-        deploy: "https://stunning-kitten-bc730d.netlify.app/#dark",
+        deploy: "https://quiet-douhua-6d1099.netlify.app/store",
         github: "https://github.com/Almada2021/MUI-Project"
     }
 ]

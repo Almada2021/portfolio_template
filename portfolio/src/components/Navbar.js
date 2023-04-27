@@ -16,6 +16,8 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import { useScrollTo } from "react-use-window-scroll";
+
 const PrevLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
   color: theme.palette.text.main,
@@ -39,6 +41,7 @@ const navItems = ["Home", "Proyects", "Contact"];
 export default function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const scroll = useScrollTo();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -60,7 +63,14 @@ export default function DrawerAppBar(props) {
         <List>
           {navItems.map((item) => (
             <ListItem key={item} disablePadding>
-              <PrevLinkMobile to={item !== "Home" ? `/${item}` : "/"}>
+              <PrevLinkMobile
+                to={"mobile"}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scroll({ top: 0, left: 0, behavior: "auto" });
+                  navigate(item !== "Home" ? `/${item}` : "/");
+                }}
+              >
                 <ListItemButton sx={{ textAlign: "center" }}>
                   <ListItemText primary={item} />
                 </ListItemButton>
@@ -103,7 +113,14 @@ export default function DrawerAppBar(props) {
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
                 <Button key={item} sx={{ color: "#fff" }}>
-                  <PrevLink to={item !== "Home" ? `/${item}` : "/"}>
+                  <PrevLink
+                    to={"file"}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scroll({ top: 0, left: 0, behavior: "auto" });
+                      navigate(item !== "Home" ? `/${item}` : "/");
+                    }}
+                  >
                     {item}
                   </PrevLink>
                 </Button>
